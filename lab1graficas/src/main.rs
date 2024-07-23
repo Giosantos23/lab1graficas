@@ -22,22 +22,35 @@ fn main() {
     framebuffer.set_current_color(Color(0x000000));
 
 
-    
-    let points = vec![
-        (165, 380)
-        //prueba puntos 
+    // Primer polígono
+    let points1 = vec![
+        Vec3::new(165.0, 380.0, 0.0), Vec3::new(185.0, 360.0, 0.0), Vec3::new(180.0, 330.0, 0.0),
+        Vec3::new(207.0, 345.0, 0.0), Vec3::new(233.0, 330.0, 0.0), Vec3::new(230.0, 360.0, 0.0),
+        Vec3::new(250.0, 380.0, 0.0), Vec3::new(220.0, 385.0, 0.0), Vec3::new(205.0, 410.0, 0.0),
+        Vec3::new(193.0, 383.0, 0.0)
     ];
-    let points_vec3: Vec<Vec3> = points.iter()
-        .map(|&(x, y)| Vec3::new(x as f32, y as f32, 0.0))
-        .collect();
 
+    framebuffer.draw_polygon(&points1);
 
+    // Segundo polígono
+    let points2 = vec![
+        Vec3::new(321.0, 335.0, 0.0), Vec3::new(288.0, 286.0, 0.0), Vec3::new(339.0, 251.0, 0.0),
+        Vec3::new(374.0, 302.0, 0.0)
+    ];
 
-    framebuffer.draw_polygon(&points_vec3);
+    framebuffer.draw_polygon(&points2);
+
+    //poligono 3
+    let points3 = vec![
+        Vec3::new(377.0, 249.0, 0.0), Vec3::new(411.0, 197.0, 0.0), Vec3::new(436.0, 249.0, 0.0)
+    ];
+
+    framebuffer.draw_polygon(&points3);
+
     
     framebuffer.render_buffer("out.bmp");
         
-    println!("Render de polígono 1");
+    println!("Render de polígonos");
 
 }
 
