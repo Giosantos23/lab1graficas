@@ -24,8 +24,9 @@ fn main() {
 
     
     let points = vec![
-        (165, 380)
-        //prueba puntos 
+        (165, 380), (185, 360), (180, 330), (207, 345), 
+        (233, 330), (230, 360), (250, 380), (220, 385), 
+        (205, 410), (193, 383)
     ];
     let points_vec3: Vec<Vec3> = points.iter()
         .map(|&(x, y)| Vec3::new(x as f32, y as f32, 0.0))
